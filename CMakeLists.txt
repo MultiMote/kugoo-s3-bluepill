@@ -8,7 +8,7 @@ if(USE_DEFAULT_TOOLCHAIN)
   set(CMAKE_TOOLCHAIN_FILE ./extra/arm-gcc-toolchain.cmake)
 endif()
 
-project(kugoo-s3-bluepill VERSION 0.1)
+project(kugoo-s3-bluepill VERSION 0.2)
 
 
 if(NOT CMAKE_BUILD_TYPE)

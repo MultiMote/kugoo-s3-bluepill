@@ -14,14 +14,13 @@ void detailed_view_redraw() {
   uint16_t batt = battery_value();
   uint32_t distance_m = session_distance_cm() / 100;
 
+#ifdef DEBUG_RESET_REASON
   ssd1306_framebuffer_setpos(0, 0);
   sprintf(sprintf_buf, "0X%lX", reset_reason);
   ssd1306_string(sprintf_buf);
 
   ssd1306_framebuffer_setpos(1, 0);
 
-
-#ifdef DEBUG_RESET_REASON
   if(reset_reason & RCC_CSR_LPWRRSTF) {
     ssd1306_string("LOW-POWER\n");
   }
